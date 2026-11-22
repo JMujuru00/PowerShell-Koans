@@ -2,16 +2,17 @@
 
 ## About
 
-This repository documents my progress through the PowerShell Koans learning path.
+This repository documents my progress through PowerShell Koans as I develop my scripting and automation skills for a career in Cloud Engineering.
 
-I am using these exercises to strengthen my PowerShell scripting and automation skills while pursuing a career as an Azure Cloud Engineer.
+The goal is not only to complete the exercises but to build a strong understanding of PowerShell, Git, automation, and cloud administration concepts.
 
 ## Certification Progress
 
 - ✅ AZ-900 Microsoft Azure Fundamentals
 - ✅ SC-900 Microsoft Security, Compliance, and Identity Fundamentals
-- 🎯 AZ-104 Microsoft Azure Administrator
 - 🎯 AWS Cloud Practitioner (CLF-C02)
+- 🎯 AZ-104 Microsoft Azure Administrator
+
 
 ## Learning Goals
 
@@ -25,6 +26,15 @@ Through these exercises I am developing skills in:
 - Error Handling
 - Git and GitHub
 - Azure Administration
+
+## Current Focus
+
+I am currently focused on:
+
+1. Completing PowerShell Koans
+2. Passing AWS Certified Cloud Practitioner (CLF-C02)
+3. Building PowerShell projects and GitHub portfolio work
+4. Preparing for AZ-104
 
 ## Progress
 
