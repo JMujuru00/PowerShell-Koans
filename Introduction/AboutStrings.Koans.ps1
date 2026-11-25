@@ -15,27 +15,27 @@ param()
 Describe 'Strings' {
 
     It 'is a simple string of text' {
-        '____' | Should -Be 'string'
+        'string' | Should -Be 'string'
     }
 
     Context 'Literal Strings' {
 
         It 'assumes everything is literal' {
             $var = 'Some things you must take literally'
-            '____' | Should -Be $var
+            'Some things you must take literally' | Should -Be $var
         }
 
         It 'can contain special characters' {
             # 'Special' is just a title.
             $complexVar = 'They interpret these characters literally: $ ` $()'
-            '____' | Should -Be $complexVar
+            'They interpret these characters literally: $ ` $()' | Should -Be $complexVar
         }
 
         It 'can contain quotation marks' {
             $Quotes = 'This creates only one set of ''quotation marks'' in the string.'
 
             # Single quotes are easier to work with in double-quoted strings.
-            "____" | Should -Be $Quotes
+            'This creates only one set of ''quotation marks'' in the string.' | Should -Be $Quotes
         }
     }
 
@@ -43,17 +43,17 @@ Describe 'Strings' {
 
         It 'can expand variables' {
             $var = 'apple'
-            '____' | Should -Be "My favorite fruit is $var"
+            'My favorite fruit is apple' | Should -Be "My favorite fruit is $var"
         }
 
         It 'can do a simple expansion' {
-            '____' | Should -Be "Your home directory is: $HOME"
+            'Your home directory is: C:\Users\Mujuru' | Should -Be "Your home directory is: $HOME"
         }
 
         It 'handles other ways of doing the same thing' {
             # Strings can handle entire subexpressions being inserted as well!
             $String = "Your home folder is: $(Get-Item -Path $HOME)"
-            '____' | Should -Be $String
+            'Your home folder is: C:\Users\Mujuru' | Should -Be $String
         }
 
         It 'will expand variables that do not exist' {
@@ -66,7 +66,7 @@ Describe 'Strings' {
                 This could be the result of a typing mistake.
             #>
             $String = "PowerShell's home folder is: $SPHome"
-            '____' | Should -Be $String
+            "PowerShell's home folder is: " | Should -Be $String
         }
 
         It 'can get confused about :' {
@@ -85,7 +85,7 @@ Describe 'Strings' {
 
             $Number = 1
             $String = "$Number:Get shopping"
-            '____' | Should -Be $String
+            ' shopping' | Should -Be $String
         }
 
         It 'can use curly braces to mark the variable name' {
@@ -97,14 +97,14 @@ Describe 'Strings' {
 
             $Number = 1
             $String = "${Number}:Get shopping"
-            '____' | Should -Be $String
+            '1:Get shopping' | Should -Be $String
         }
 
         It 'can escape special characters with backticks' {
             $LetterA = 'Apple'
             $String = "`$LetterA contains $LetterA."
 
-            '____' | Should -Be $String
+            '$LetterA contains Apple.' | Should -Be $String
         }
 
         It 'can escape quotation marks' {
@@ -113,8 +113,8 @@ Describe 'Strings' {
 
             # A mirror image, a familiar pattern, reflected in the glass.
             $Results = @(
-                '____'
-                '____'
+                'This is a "string" value.'
+                'This is a "string" value.'
             )
             $Results | Should -Be @($String, $AlternateString)
         }
@@ -145,7 +145,7 @@ Describe 'Strings' {
                 you can use to create the right character with PowerShell's
                 native string escape sequences.
             #>
-            $ActualValue = "`_"
+            $ActualValue = "`t"
 
             $ActualValue | Should -Be $ExpectedValue
         }
